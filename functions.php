@@ -27,7 +27,7 @@ function enqueue_frontend_dist() {
     ));
 }
 
-// Include
-foreach ( glob( get_template_directory() . '/include/*.php' ) as $file ) {
+// Require All PHP Files Within The Include Folder
+foreach ( glob( get_template_directory() . '/include/**/*.php' ) as $file ) {
     require_once $file;
 }
