@@ -2,7 +2,7 @@
 // GLOBALS
 // ======================
 
-window.DEBUG = true;
+window.DEBUG = false;
 if (window.DEBUG) document.body.classList.add("debug--enabled");
 
 window.cursorPosition = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
