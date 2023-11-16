@@ -28,6 +28,10 @@ function enqueue_frontend_dist() {
 }
 
 // Require All PHP Files Within The Include Folder
-foreach ( glob( get_template_directory() . '/include/**/*.php' ) as $file ) {
-    require_once $file;
+$directory = new RecursiveDirectoryIterator( get_template_directory() . '/include' );
+$iterator = new RecursiveIteratorIterator( $directory );
+$php_files = new RegexIterator( $iterator, '/^.+\.php$/i', RecursiveRegexIterator::GET_MATCH) ;
+
+foreach ($php_files as $php_file) {
+    require_once $php_file[0];
 }
