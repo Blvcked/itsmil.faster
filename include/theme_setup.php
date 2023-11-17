@@ -40,12 +40,6 @@ function seb_theme_setup() {
     add_theme_support( 'editor-styles' );
 }
 
-// Enqueue Backend CSS
-add_action( 'admin_init', 'enqueue_backend_style' );
-function enqueue_backend_style() {
-    add_editor_style( 'dist/css/backend.css' );
-}
-
 // Register Menus
 register_nav_menus(
 	array(

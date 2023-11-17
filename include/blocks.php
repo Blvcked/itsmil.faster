@@ -33,10 +33,18 @@ function load_block_settings($dir) {
     }
 }
 
-// Better Gutenberg Styles
-add_action( 'enqueue_block_editor_assets', 'better_gutenberg');
-function better_gutenberg() {
-	wp_enqueue_style( 'better_gutenberg', get_theme_file_uri( 'style.css' ), false, _VER, 'all' );
+// Better Blocks
+add_action( 'enqueue_block_editor_assets', 'seb_theme_better_blocks');
+function seb_theme_better_blocks() {
+	add_editor_style( 'dist/css/backend.css' );
+
+    wp_enqueue_script(
+        'seb-theme-better-blocks',
+        get_template_directory_uri() . '/dist/js/backend.js',
+        array(),
+        filemtime( get_template_directory() . '/dist/js/backend.js' ),
+        true
+    );
 }
 
 // Custom Blocks Category
