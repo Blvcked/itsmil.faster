@@ -61,5 +61,16 @@ function custom_block_categories( $categories, $post ) {
 	return array_merge( $new_categories, $categories );
 }
 
-// Add Patterns to Admin Column
-add_menu_page( 'linked_url', 'Patterns', 'read', 'edit.php?post_type=wp_block', '', 'dashicons-layout', 30 );
+// Add Patterns As Menu Page
+add_action('admin_menu', 'add_patterns_menu_page');
+function add_patterns_menu_page() {
+    add_menu_page(
+        'Patterns',
+        'Patterns',
+        'read',
+        'edit.php?post_type=wp_block',
+        '',
+        'dashicons-layout',
+        30
+    );
+}
