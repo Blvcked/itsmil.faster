@@ -58,7 +58,7 @@ function seb_theme_plugins() {
         'capability'   => 'edit_theme_options',
         'is_automatic' => true,
         'has_notices'  => true,
-        'dismissable'  => false,
+        'dismissable'  => true,
         'strings'      => array(
             'menu_title' => __( 'Required Plugins', 'tgmpa' )
         ),
