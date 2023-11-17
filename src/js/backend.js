@@ -161,8 +161,6 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
             </>
         );
         // }
-
-        return <BlockEdit {...props} />;
     };
 }, "withInspectorControl");
 
