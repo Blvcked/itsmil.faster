@@ -1,8 +1,8 @@
 <?php
 
 // Theme Setup
-add_action( 'after_setup_theme', 'barbasap_setup' );
-function barbasap_setup() {
+add_action( 'after_setup_theme', 'seb_theme_setup' );
+function seb_theme_setup() {
     /*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
@@ -49,7 +49,7 @@ function enqueue_backend_style() {
 // Register Menus
 register_nav_menus(
 	array(
-		'header-navigation' => esc_html__( 'Header Navigation', 'barbasap' ),
-		'footer-navigation' => esc_html__( 'Footer Navigation', 'barbasap' ),
+		'header-navigation' => esc_html__( 'Header Navigation', 'seb-theme' ),
+		'footer-navigation' => esc_html__( 'Footer Navigation', 'seb-theme' ),
 	)
 );

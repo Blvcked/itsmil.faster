@@ -17,11 +17,11 @@
                 </defs>
                 <text dy="0" font-size="13.3">
                     <textPath startOffset="0" xlink:href="#scroll-progress__text__path" side="left" method="stretch" class="scroll-progress__text__path">
-                        <?php _e( 'Swap Color Theme', 'barbasap' ) ?>
+                        <?php _e( 'Swap Color Theme', 'seb-theme' ) ?>
                         &bull;
                     </textPath>
                     <textPath startOffset="50%" xlink:href="#scroll-progress__text__path" side="left" method="stretch" class="scroll-progress__text__path">
-                        <?php _e( 'Swap Color Theme', 'barbasap' ) ?>
+                        <?php _e( 'Swap Color Theme', 'seb-theme' ) ?>
                         &bull;
                     </textPath>
                 </text>

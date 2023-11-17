@@ -32,7 +32,7 @@ $testimonies = mb_get_block_field( 'testimonies' ) ?? [];
         <button 
             class="swiper-button swiper-button--prev"
             type="button"
-            title="<?php _e( 'Anterior grupo de reseñas', 'barbasap' ) ?>"
+            title="<?php _e( 'Anterior grupo de reseñas', 'seb-theme' ) ?>"
         >
             <svg class="inline-svg inline-svg--stroke swiper-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                 <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -47,7 +47,7 @@ $testimonies = mb_get_block_field( 'testimonies' ) ?? [];
         <button 
             class="swiper-button swiper-button--next"
             type="button"
-            title="<?php _e( 'Siguiente grupo de reseñas', 'barbasap' ) ?>"
+            title="<?php _e( 'Siguiente grupo de reseñas', 'seb-theme' ) ?>"
         >
             <svg class="inline-svg inline-svg--stroke swiper-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                 <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">

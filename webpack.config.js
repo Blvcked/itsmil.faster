@@ -14,7 +14,7 @@ const projectFiles = {
         port: 3000,
 
         mode: "proxy",
-        proxy: "http://barbasap.faster",
+        proxy: "http://sebtheme.faster",
 
         // files: "**/*.php",
         // reload: true,

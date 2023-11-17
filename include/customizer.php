@@ -1,11 +1,11 @@
 <?php
 
-add_action( 'customize_register', 'barbasap_customize_register' );
-function barbasap_customize_register( $wp_customize ) {
+add_action( 'customize_register', 'seb_theme_register_customize' );
+function seb_theme_register_customize( $wp_customize ) {
 
     // Theme Settings
     $wp_customize->add_section( 'theme_settings', array(
-        'title'    => __( 'Theme Settings', 'barbasap' ),
+        'title'    => __( 'Theme Settings', 'seb-theme' ),
         'priority' => 30,
     ) );
 
@@ -14,7 +14,7 @@ function barbasap_customize_register( $wp_customize ) {
         'default' => true,
     ) );
     $wp_customize->add_control( 'enable_loader', array(
-        'label'    => __( 'Enable Loader', 'barbasap' ),
+        'label'    => __( 'Enable Loader', 'seb-theme' ),
         'section'  => 'theme_settings',
         'type'     => 'checkbox',
     ) );
@@ -24,7 +24,7 @@ function barbasap_customize_register( $wp_customize ) {
         'default' => true,
     ) );
     $wp_customize->add_control( 'enable_decoration-filter', array(
-        'label'    => __( 'Enable Decoration Filter', 'barbasap' ),
+        'label'    => __( 'Enable Decoration Filter', 'seb-theme' ),
         'section'  => 'theme_settings',
         'type'     => 'checkbox',
     ) );
@@ -34,7 +34,7 @@ function barbasap_customize_register( $wp_customize ) {
         'default' => true,
     ) );
     $wp_customize->add_control( 'enable_decoration-grid', array(
-        'label'    => __( 'Enable Decoration Grid', 'barbasap' ),
+        'label'    => __( 'Enable Decoration Grid', 'seb-theme' ),
         'section'  => 'theme_settings',
         'type'     => 'checkbox',
     ) );
@@ -44,7 +44,7 @@ function barbasap_customize_register( $wp_customize ) {
         'default' => true,
     ) );
     $wp_customize->add_control( 'enable_decoration-noise', array(
-        'label'    => __( 'Enable Decoration Noise', 'barbasap' ),
+        'label'    => __( 'Enable Decoration Noise', 'seb-theme' ),
         'section'  => 'theme_settings',
         'type'     => 'checkbox',
     ) );
@@ -54,7 +54,7 @@ function barbasap_customize_register( $wp_customize ) {
         'default' => true,
     ) );
     $wp_customize->add_control( 'enable_scroll-progress-indicator', array(
-        'label'    => __( 'Enable Scroll Progress Indicator', 'barbasap' ),
+        'label'    => __( 'Enable Scroll Progress Indicator', 'seb-theme' ),
         'section'  => 'theme_settings',
         'type'     => 'checkbox',
     ) );
@@ -66,7 +66,7 @@ function barbasap_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'map_api_key', [
         'type'      => 'text',
         'section'   => 'theme_settings',
-        'label'     => __( 'Google Maps API Key', 'barbasap' ),
+        'label'     => __( 'Google Maps API Key', 'seb-theme' ),
     ] );
 }
 
