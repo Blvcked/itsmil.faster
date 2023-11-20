@@ -33,7 +33,7 @@ import {
 } from "./libs/gsap/gsapUtils";
 
 // Swiper
-// import { initSwipers } from "./swiper/initSwipers";
+import { initSwipers } from "./libs/swiper/initSwipers";
 
 // Mouse Follower
 import initMouseFollower from "./libs/mouseFollower";
@@ -65,7 +65,7 @@ function documentReady() {
     getHeight("#siteHeader", "#siteNavbar", "#siteFooter");
 
     initGsap();
-    // initSwipers();
+    initSwipers();
     initVideos();
     if (!ScrollTrigger.isTouch) initMouseFollower();
 
@@ -171,7 +171,7 @@ barba.hooks.after(() => {
     updateEffects();
     updateTriggers();
 
-    // initSwipers();
+    initSwipers();
     initVideos();
     initGLightbox();
     initMaps();
