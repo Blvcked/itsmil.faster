@@ -18,6 +18,7 @@ import "../scss/frontend.scss";
 // Barba
 import barba from "@barba/core";
 import initBarba from "./libs/barba/initBarba";
+import barbaUpdateClasses from "./barba/barbaUpdateClasses.js";
 // import barbaBackButton from "./barba/barbaBackButton";
 
 // GSAP
@@ -146,8 +147,10 @@ barba.hooks.afterLeave(() => {
     killTriggers();
 });
 
-barba.hooks.beforeEnter(() => {
+barba.hooks.beforeEnter((data) => {
     if (DEBUG) console.log(`beforeEnter`);
+
+    barbaUpdateClasses(data.next.html);
 });
 
 barba.hooks.enter((data) => {
