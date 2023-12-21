@@ -14,7 +14,7 @@ const projectFiles = {
         port: 3000,
 
         mode: "proxy",
-        proxy: "http://sebtheme.faster",
+        proxy: "http://itsmil.faster",
 
         // files: "**/*.php",
         // reload: true,
