@@ -21,7 +21,7 @@ module.exports = (projectOptions) => {
             projectOptions.projectCss.use === "sass"
                 ? projectOptions.projectCss.rules.sass.test
                 : projectOptions.projectCss.rules.postcss.test,
-        exclude: /(node_modules|bower_components|vendor)/,
+        // exclude: /(node_modules|bower_components|vendor)/,
         use: [
             MiniCssExtractPlugin.loader,
             "css-loader",
