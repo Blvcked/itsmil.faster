@@ -13,7 +13,7 @@ WARNING="\xE2\x9A\xA0"
 
 while true; do
     # Prompt user for commit hash
-    echo -e "${YELLOW}Enter the commit hash you want to cherry-pick:${NC}"
+    echo -e "${YELLOW}${WARNING} Enter the commit hash you want to cherry-pick:${NC}"
     read -p "> " commit_hash
     if [ -z "$commit_hash" ]; then
         echo -e "${RED}${CROSS_MARK} Error: Commit hash missing. Please try again.${NC}"
@@ -21,6 +21,7 @@ while true; do
         # Validate commit hash
         echo -e "${YELLOW}Validating commit hash...${NC}"
         if git rev-parse "$commit_hash" >/dev/null 2>&1; then
+            echo -e "${GREEN}${CHECK_MARK} Commit hash is valid and found in the repository.${NC}"
             break
         else
             echo -e "${RED}${CROSS_MARK} Error: Commit hash does not exist in the repository. Please try again.${NC}"
@@ -29,32 +30,35 @@ while true; do
 done
 
 # Fetch changes from upstream
-echo -e "${YELLOW}${WARNING} Fetching changes from upstream...${NC}"
+echo -e "${YELLOW}Fetching changes from upstream...${NC}"
 git fetch upstream
 if [ $? -ne 0 ]; then
     echo -e "${RED}${CROSS_MARK} Failed to fetch changes from upstream.${NC}"
     exit 1
 fi
+echo -e "${GREEN}${CHECK_MARK} Successfully fetched changes from upstream.${NC}"
 
 # Create and checkout new branch based on upstream/main
-echo -e "${YELLOW}${WARNING} Creating and checking out to new branch...${NC}"
+echo -e "${YELLOW}Creating and checking out to new branch...${NC}"
 git checkout -b "cherry-$commit_hash" upstream/main
 if [ $? -ne 0 ]; then
     echo -e "${RED}${CROSS_MARK} Failed to checkout new branch.${NC}"
     exit 1
 fi
+echo -e "${GREEN}${CHECK_MARK} Successfully created and checked out to new branch.${NC}"
 
 # Cherry-pick the commit
-echo -e "${YELLOW}${WARNING} Cherry-picking the commit...${NC}"
+echo -e "${YELLOW}Cherry-picking the commit...${NC}"
 git cherry-pick $commit_hash
 if [ $? -ne 0 ]; then
     echo -e "${RED}${CROSS_MARK} Cherry-pick failed. Please resolve conflicts and then continue.${NC}"
     exit 1
 fi
+echo -e "${GREEN}${CHECK_MARK} Successfully cherry-picked the commit.${NC}"
 
 # Confirm before pushing
 echo -e "${YELLOW}Are you sure you want to push the cherry-picked commit to upstream/main? (y/n)${NC}"
-read -n 1 -r
+read -r
 echo    # Move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -81,7 +85,7 @@ fi
 
 # Ask if user wants to delete the new branch
 echo -e "${YELLOW}Do you want to delete the new branch 'cherry-$commit_hash'? (y/n)${NC}"
-read -n 1 -r
+read -r
 echo    # Move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
