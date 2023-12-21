@@ -7,13 +7,13 @@ module.exports = (projectOptions) => {
         test: projectOptions.projectJs.rules.test,
         include: projectOptions.projectJsPath,
         exclude: /(node_modules|bower_components|vendor)/,
-        use: {
-            loader: "babel-loader",
-            options: {
-                cacheDirectory: true,
-                presets: ["@babel/preset-env", "@babel/preset-react"],
-            },
-        },
+        // use: {
+        //     loader: "babel-loader",
+        //     options: {
+        //         cacheDirectory: true,
+        //         presets: ["@babel/preset-env", "@babel/preset-react"],
+        //     },
+        // },
     };
 
     const cssRules = {
