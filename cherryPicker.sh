@@ -11,13 +11,22 @@ CHECK_MARK="\xE2\x9C\x94"
 CROSS_MARK="\xE2\x9D\x8C"
 WARNING="\xE2\x9A\xA0"
 
-# Prompt user for commit hash
-echo -e "${YELLOW}Enter the commit hash you want to cherry-pick:${NC}"
-read -p "> " commit_hash
-if [ -z "$commit_hash" ]; then
-    echo -e "${RED}${CROSS_MARK} Error: Commit hash missing.${NC}"
-    exit 1
-fi
+while true; do
+    # Prompt user for commit hash
+    echo -e "${YELLOW}Enter the commit hash you want to cherry-pick:${NC}"
+    read -p "> " commit_hash
+    if [ -z "$commit_hash" ]; then
+        echo -e "${RED}${CROSS_MARK} Error: Commit hash missing. Please try again.${NC}"
+    else
+        # Validate commit hash
+        echo -e "${YELLOW}Validating commit hash...${NC}"
+        if git rev-parse "$commit_hash" >/dev/null 2>&1; then
+            break
+        else
+            echo -e "${RED}${CROSS_MARK} Error: Commit hash does not exist in the repository. Please try again.${NC}"
+        fi
+    fi
+done
 
 # Fetch changes from upstream
 echo -e "${YELLOW}${WARNING} Fetching changes from upstream...${NC}"
