@@ -18,8 +18,8 @@ import "../scss/frontend.scss";
 // Barba
 import barba from "@barba/core";
 import initBarba from "./libs/barba/initBarba";
-import barbaUpdateClasses from "./barba/barbaUpdateClasses.js";
-// import barbaBackButton from "./barba/barbaBackButton";
+import barbaUpdateClasses from "./libs/barba/barbaUpdateClasses.js";
+// import barbaBackButton from "./libs/barba/barbaBackButton";
 
 // GSAP
 import { ScrollTrigger } from "gsap/ScrollTrigger";
