@@ -72,7 +72,7 @@ then
     echo -e "${GREEN}${CHECK_MARK} Push successful!${NC}"
 else
     echo -e "${RED}${CROSS_MARK} Push aborted by the user.${NC}"
-    exit 1
+    # Continue with the script even if push is aborted
 fi
 
 # Back to origin/main
